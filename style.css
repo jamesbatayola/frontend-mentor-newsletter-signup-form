@@ -47,7 +47,7 @@ button {
 
 .container {
 	display: grid;
-	min-width: auto;
+	min-height: auto;
 	min-width: 375px;
 	overflow: hidden;
 }
