@@ -1,0 +1,310 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	font-size: inherit;
+	font-family: "Roboto", sans-serif;
+}
+
+body {
+	display: grid;
+	min-height: 100vh;
+	align-items: start;
+	line-height: 1.5rem;
+	justify-content: center;
+	background-color: var(--Charcoal-Grey);
+}
+
+img,
+svg {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
+input,
+button {
+	font: inherit;
+}
+
+:root {
+	--Dark-Slate-Grey: hsl(234, 29%, 20%);
+	--Charcoal-Grey: hsl(235, 18%, 26%);
+	--Grey: hsl(231, 7%, 60%, 0.5);
+	--White: hsl(0, 0%, 100%);
+	--Tomato: hsl(4, 100%, 67%);
+	--Tomatoka: hsla(22, 100%, 50%, 0.925);
+}
+
+/* ======================================================================= */
+
+.container {
+	display: grid;
+	min-width: auto;
+	min-width: 375px;
+	overflow: hidden;
+}
+
+.container .mobile {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+.container .desktop {
+	width: 100%;
+	height: auto;
+	display: none;
+}
+
+.content-container {
+	display: grid;
+	gap: 2rem;
+	padding: 1rem 1.5rem 2.5rem 1.5rem;
+}
+
+.left {
+	display: grid;
+	gap: 2rem;
+	/* padding: 2rem 1.5rem; */
+	background-color: var(--White);
+}
+
+.left h1 {
+	font-size: 2.5rem;
+	color: var(--Dark-Slate-Grey);
+}
+
+.left .info {
+	font-weight: 400;
+	display: grid;
+	gap: 2rem;
+}
+
+.left .group {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	gap: 0.7rem;
+}
+
+.left .info .item {
+	display: flex;
+	gap: 1rem;
+}
+
+.left .info .item figure {
+	min-width: 20px;
+	min-height: 20px;
+}
+
+form {
+	display: grid;
+}
+
+form label {
+	display: flex;
+	font-weight: 700;
+	font-size: 0.8rem;
+	margin-bottom: 0.5rem;
+	justify-content: space-between;
+}
+form label span {
+	display: none;
+}
+
+form input,
+button {
+	border: none;
+	padding: 1rem 1.4rem;
+	border-radius: 0.5rem;
+}
+
+form input {
+	margin-bottom: 1.2rem;
+	border: 1px solid var(--Grey);
+}
+
+form input:hover {
+	border: 1px solid black;
+}
+
+form button {
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	cursor: pointer;
+	background-color: var(--Dark-Slate-Grey);
+	color: var(--White);
+}
+form button:hover {
+	background: linear-gradient(0.25turn, var(--Tomato), var(--Tomatoka));
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.295);
+}
+
+.error-message {
+	color: var(--Tomato);
+}
+
+.error {
+	background-color: hsla(4, 100%, 67%, 0.2);
+	border-color: var(--Tomato);
+	color: var(--Tomato);
+}
+
+/* ======================================================================= */
+
+.confirmation-message {
+	gap: 2rem;
+	display: grid;
+	min-height: 100vh;
+	min-width: 375px;
+	align-content: end;
+	padding: 0rem 1.5rem 2.5rem 1.5rem;
+	background-color: var(--White);
+	display: none;
+}
+
+.confirmation-message img {
+	width: 4rem;
+}
+
+.confirmation-message h2 {
+	color: var(--Dark-Slate-Grey);
+	line-height: 2.5rem;
+	font-size: 2.6rem;
+}
+
+.confirmation-message p {
+	line-height: 1.4rem;
+	text-wrap: pretty;
+}
+
+.confirmation-message button {
+	margin-top: 18rem;
+	color: var(--White);
+	background-color: var(--Dark-Slate-Grey);
+}
+
+.confirmation-message button:hover {
+	background: linear-gradient(0.25turn, var(--Tomato), var(--Tomatoka));
+	box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.295);
+}
+
+/* ======================================================================= */
+
+.attribution {
+	left: 50%;
+	bottom: 1rem;
+	display: none;
+	position: absolute;
+	color: var(--White);
+	transform: translate(-50%, -50%);
+}
+
+.attribution a {
+	color: var(--White);
+}
+
+/* ======================================================================= */
+
+/* !MEDIAQUERY */
+
+@media only screen and (min-width: 845px) {
+	body {
+		display: grid;
+		place-content: center;
+		background-color: var(--Charcoal-Grey);
+	}
+
+	/* ----------------------------------------------- */
+
+	.container {
+		display: grid;
+		max-width: 800px;
+		border-radius: 2rem;
+		margin-inline: 0.5rem;
+		background-color: var(--White);
+		padding: 1.2rem 1.2rem 1.2rem 0;
+		grid-template-columns: 2fr 1.5fr;
+		grid-template-areas: "left illustration";
+	}
+	.container .mobile {
+		display: none;
+	}
+	.container .desktop {
+		display: block;
+		grid-area: illustration;
+	}
+	.content-container {
+		padding: 0;
+		gap: 2rem;
+	}
+	.left {
+		display: grid;
+		align-items: center;
+		padding: 0 2.8rem;
+		gap: 1.5rem;
+	}
+	.left h1 {
+		font-size: 3.3rem;
+	}
+	.left .info {
+		margin-bottom: 0rem;
+		gap: 1rem;
+	}
+	.left .group {
+		display: grid;
+		align-items: center;
+		gap: 0.5rem;
+	}
+	form {
+		width: 100%;
+	}
+	form label {
+		margin-bottom: 0;
+	}
+	form input,
+	button {
+		width: 100%;
+		padding: 1rem;
+	}
+	form input {
+		margin-bottom: 1rem;
+	}
+
+	/* ----------------------------------------------- */
+
+	.confirmation-message {
+		gap: 1.7rem;
+		padding: 2.5rem;
+		max-width: 444px;
+		min-height: auto;
+		border-radius: 1.7rem;
+		background-color: var(--White);
+	}
+	.confirmation-message h2 {
+		font-size: 3rem;
+		line-height: 3rem;
+	}
+
+	.confirmation-message button {
+		margin-top: 0rem;
+		margin-bottom: 0.9rem;
+		padding: 1rem;
+	}
+
+	.confirmation-message img {
+		width: 3rem;
+	}
+
+	.attribution {
+		display: block;
+		text-wrap: nowrap;
+	}
+}
